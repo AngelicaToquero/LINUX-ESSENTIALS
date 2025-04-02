@@ -1,9 +1,7 @@
 name: Log Time Job
 
 on:
-  # schedule:
-  #   - cron: '*/5 * * * *'  # Comment out or remove this line to stop the automatic runs
-
+ 
 jobs:
   log_time:
     runs-on: ubuntu-latest
