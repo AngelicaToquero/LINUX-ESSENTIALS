@@ -1,9 +1,10 @@
 name: Log Time Job
 
 on:
-  workflow_dispatch:  # Allows manual trigger
   schedule:
-    - cron: "*/1 * * * *"  # Runs every minute
+    - cron: '*/5 * * * *'  # Example cron schedule
+  disabled: true
+
 
 jobs:
   log_time:
