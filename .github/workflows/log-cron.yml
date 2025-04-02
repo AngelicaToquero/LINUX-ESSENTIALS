@@ -1,24 +1,21 @@
 name: Log Time Job
 
 on:
-  workflow_dispatch:  # Allows manual trigger
   schedule:
-    - cron: "*/1 * * * *"  # Runs every minute
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
 
 jobs:
   log_time:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run logging script in a loop
+      - name: Run logging script
         run: |
           chmod +x log_time.sh
-          for i in {1..6}; do  # Runs every 10 seconds for 1 minute
-            ./log_time.sh
-            sleep 10
-          done
+          ./log_time.sh
 
       - name: Commit and push changes
         run: |
